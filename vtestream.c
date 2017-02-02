@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2003 Red Hat, Inc.
+ * Copyright (C) 2009,2010 Red Hat, Inc.
  *
  * This is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Library General Public License as published by
@@ -14,25 +14,20 @@
  * You should have received a copy of the GNU Library General Public
  * License along with this program; if not, write to the Free Software
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *
+ * Red Hat Author(s): Behdad Esfahbod
  */
 
-#ifndef vte_vteregex_h_included
-#define vte_vteregex_h_included
+#include <config.h>
+
+#include "debug.h"
+#include "vtestream.h"
 
 
-#include <glib.h>
+/*
+ * In the future it may be worth replacing these with gio.  Not sure about
+ * the overhead though.
+ */
 
-G_BEGIN_DECLS
-
-struct _vte_regex_match {
-	int rm_so, rm_eo;
-};
-struct _vte_regex;
-
-struct _vte_regex * _vte_regex_compile(const char *pattern);
-void _vte_regex_free(struct _vte_regex *regex);
-int _vte_regex_exec(struct _vte_regex *regex, const char *string,
-		    gsize nmatch, struct _vte_regex_match *matches);
-G_END_DECLS
-
-#endif
+#include "vtestream-base.h"
+#include "vtestream-file.h"
