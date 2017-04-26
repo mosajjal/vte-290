@@ -1,2 +1,2 @@
 # vte-290
-vte-2.90 for lilyterm
+When compiling LilyTerm from scrath, you'll need this library and this exact version. Dunno why they wrote it that way
